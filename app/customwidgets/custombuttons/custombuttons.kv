@@ -1,0 +1,59 @@
+<CustomButton>
+    text: root.text
+    color: root.text_color
+    font_name: 'assets/fonts/Poppins-Bold.ttf'
+    background_normal: ''
+    background_color: 0, 0, 0, 0
+    size_hint: .22, None
+    height: dp(42)
+    
+    canvas.before:
+        Color:
+            rgba: hex(root.bg_color)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: 8, 8, 8, 8 
+            
+<CardButton>
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, .35
+        BoxShadow:
+            size: self.size
+            pos: self.pos
+            blur_radius: 15
+            border_radius: 8, 8, 8, 8
+    canvas:
+        Color: 
+            rgba: hex(root.bg_color)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: 8, 8, 8, 8
+    
+    MDBoxLayout:
+        size_hint: None, .4
+        width: self.height
+        pos_hint: {'center_x': .5, 'center_y': .7}
+        Image:
+            source: root.unit_icon
+            fit_mode: 'contain'
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            
+    CustomBoldLabel:
+        text: root.unit_title
+        font_size: '14sp'
+        pos_hint: {'center_x': .5, 'center_y': .2}     
+        
+<BackIconButton@MDIconButton>
+    icon: 'arrow-left'
+    theme_icon_color: 'Custom'
+    icon_color: 'white' 
+    pos_hint: {'x': 0, 'top': .98}
+    
+<ChevronIconButton@MDIconButton>:
+    icon: 'chevron-down'
+    theme_icon_color: 'Custom'
+    icon_color: 'white' 
+    pos_hint: {'center_y': .5}

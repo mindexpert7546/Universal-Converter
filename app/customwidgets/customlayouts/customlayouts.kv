@@ -1,0 +1,67 @@
+#:import hex kivy.utils.get_color_from_hex
+
+<ElevatedBar@MDFloatLayout>
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, .35
+        BoxShadow:
+            size: self.size
+            pos: self.pos
+            blur_radius: 15
+            border_radius: 8, 8, 8, 8
+    canvas:
+        Color: 
+            rgba: hex('#027783')
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            
+<ContentLayout@MDFloatLayout>
+    size_hint: 1, .5
+    md_bg_color: '#ffffff'
+    
+<WhiteCircle@MDFloatLayout>
+    
+    canvas:
+        Color:
+            rgba: hex('#ffffff')
+        Ellipse:
+            pos: self.pos
+            size: self.size
+            
+<UnitSelectionLayout@MDBoxLayout>
+    size_hint: None, None  # Width and height will adapt to content
+    adaptive_size: True
+    spacing: '5dp'
+    padding: [16, 0, 0, 0]
+    orientation: 'horizontal'
+    
+<UnitValueLayout@MDBoxLayout>
+    size_hint: .7, .2
+    pos_hint: {'center_x':.5, 'center_y':.5}
+    
+<CircularLayout>
+    size_hint: .2, None
+    height: self.width
+    canvas:
+        Color:
+            rgba: hex(root.bg_color)
+        Ellipse:
+            pos: self.pos
+            size: self.size
+            
+    WhiteCircle:
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        size_hint: .88, .88
+        MDIcon:
+            icon: "arrow-up-bold"
+            pos_hint: {'x':.2, 'center_y':.5}
+            theme_icon_color: 'Custom'
+            icon_color: root.icon_color
+            halign: 'left'
+        MDIcon:
+            icon: "arrow-down-bold"
+            pos_hint: {'right':.8, 'center_y':.5}
+            theme_icon_color: 'Custom'
+            icon_color: root.icon_color
+            halign: 'right'

@@ -1,0 +1,41 @@
+#:import ModalView kivy.uix.modalview.ModalView
+#:import MDFloatLayout kivymd.uix.floatlayout.MDFloatLayout
+
+<ExitPopup@ModalView>      
+    auto_dismiss: False
+    size_hint: .8, .34
+    
+    MDFloatLayout:
+        size_hint: 1, 1
+        radius: [8]
+        md_bg_color: 'white'
+        
+        CustomBoldLabel:
+            text: "Exit!"
+            color: '#666666'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+            
+        MDBoxLayout:
+            orientation: 'vertical'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            size_hint: 1, None
+            height: self.minimum_height
+            padding: 20
+            spacing: 5
+            
+            CustomRegularLabel:
+                text: 'Are you sure you want to exit?'
+                color: 'gray'
+                
+        CustomButton:
+            id: yes_btn
+            text: 'Yes'
+            pos_hint: {'x': 0.1, 'center_y': 0.2}
+                
+        CustomButton:
+            text: 'No'
+            text_color: '#027783'
+            bg_color: '#f3f3f3'
+            pos_hint: {'right': 0.9, 'center_y': 0.2}
+            on_press:
+                root.dismiss() 

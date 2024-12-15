@@ -1,0 +1,7 @@
+python==3.11.9
+Kivy==2.3.0
+https://github.com/kivymd/KivyMD/archive/master.zip
+materialyoucolor
+exceptiongroup
+asyncgui
+asynckivy

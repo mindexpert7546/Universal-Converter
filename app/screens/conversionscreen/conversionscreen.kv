@@ -1,0 +1,67 @@
+<ConversionScreen>
+
+    ContentLayout:
+        pos_hint: {'center_x': .5, 'center_y': .75}
+        md_bg_color: root.color # Changeable
+        
+        BackIconButton:
+            on_release:
+                root.manager.current = 'menu_screen'
+                root.manager.transition.direction = 'right'
+                
+        UnitSelectionLayout:
+            pos_hint: {'center_x': .5, 'top': .8}
+            
+            UnitLabel:
+                id: first_unit_name
+                text: root.initial_unit # Changeable
+                
+            ChevronIconButton:
+                id: first_unit_btn
+                on_release:
+                    root.open_first_menu()
+                
+        UnitValueLayout:
+            CustomTextInput:
+                id: first_unit_value
+                text: f"{root.initial_value}"
+                on_text: root.first_conversion()
+                
+        CustomRegularLabel:
+            text: 'tab to change the value'
+            pos_hint: {'center_x': .5, 'center_y': .3}
+                
+    ContentLayout:
+        pos_hint: {'center_x': .5, 'center_y': .25}
+        
+        UnitSelectionLayout:
+            pos_hint: {'center_x': .5, 'y': .2}
+            
+            UnitLabel:
+                id: second_unit_name
+                text: root.initial_unit # Changeable
+                color: 'gray'
+                
+            ChevronIconButton:
+                id: second_unit_btn
+                icon_color: root.color # Changeable
+                on_release: root.open_second_menu()
+
+        UnitValueLayout:
+            CustomTextInput:
+                id: second_unit_value
+                text: f"{root.initial_value}"
+                cursor_color: '#666666' 
+                foreground_color: '#666666' 
+                on_text: root.second_conversion()
+        
+        CustomRegularLabel:
+            text: 'tab to change the value'
+            pos_hint: {'center_x': .5, 'center_y': .7}
+            color: root.color # Changeable
+        
+    CircularLayout:
+        pos_hint: {'center_x': .5, 'center_y': .5}
+        bg_color: root.color # Changeable
+        icon_color: root.color # Changeable
+    

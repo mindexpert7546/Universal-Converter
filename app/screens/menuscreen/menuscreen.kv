@@ -1,0 +1,115 @@
+<MenuScreen>
+
+    Image:
+        source: 'assets/ui/bg.png'
+        fit_mode: 'cover'
+        
+    ElevatedBar:
+        pos_hint: {'center_x': .5, 'top': 1}
+        size_hint: 1, .1
+        
+        MDIconButton:
+            style: 'outlined'
+            icon: 'power'
+            theme_icon_color: 'Custom'
+            icon_color: 'white'
+            theme_line_color: 'Custom'
+            line_color: 'white' 
+            pos_hint: {'x': .02, 'center_y': .5}
+            on_release:
+                root.open_popup()
+                
+        CustomBoldLabel:
+            text: "Universal Convert"
+            pos_hint: {'center_x': .5, 'center_y': .5}
+            
+    MDGridLayout:
+        size_hint: 1, .8
+        pos_hint: {'center_x': .5, 'center_y': .46} 
+        cols: 3
+        padding: '6dp'
+        spacing: '6dp'
+        
+        CardButton:
+            unit_icon: 'assets/ui/icons/angle.png'
+            unit_title: "Angle"
+            bg_color: '#6f0000'
+            on_release:
+                root.angle_conversion()
+                
+        CardButton:
+            unit_icon: 'assets/ui/icons/area.png'
+            unit_title: "Area"
+            bg_color: '#111111'
+            on_release:
+                root.area_conversion()
+                
+        CardButton:
+            unit_icon: 'assets/ui/icons/data-storage.png'
+            unit_title: "Data Storage"
+            bg_color: '#3f4c6b'
+            on_release:
+                root.datastorage_conversion()
+                
+        CardButton:
+            unit_icon: 'assets/ui/icons/force.png'
+            unit_title: "Force"
+            bg_color: '#2a9064'
+            on_release:
+                root.force_conversion()
+                
+        CardButton:
+            unit_icon: 'assets/ui/icons/frequency.png'
+            unit_title: "Frequency"
+            bg_color: '#0f3443'
+            on_release:
+                root.frequency_conversion()
+                
+        CardButton:
+            unit_icon: 'assets/ui/icons/length.png'
+            unit_title: "Length"
+            bg_color: '#61a830'
+            on_release:
+                root.length_conversion()
+                
+        CardButton:
+            unit_icon: 'assets/ui/icons/mass.png'
+            unit_title: "Mass"
+            bg_color: '#aa388d'
+            on_release:
+                root.mass_conversion()
+        
+        CardButton:
+            unit_icon: 'assets/ui/icons/pressure.png'
+            unit_title: "Pressure"
+            bg_color: '#f7a800'
+            on_release:
+                root.pressure_conversion()
+                
+        CardButton:
+            unit_icon: 'assets/ui/icons/speed.png'
+            unit_title: "Speed"
+            bg_color: '#3f2683'
+            on_press:
+                root.speed_conversion()
+                        
+        CardButton:
+            unit_icon: 'assets/ui/icons/temperature.png'
+            unit_title: "Temperature"
+            bg_color: '#ec662c'
+            on_release:
+                root.temperature_conversion()
+                
+        CardButton:
+            unit_icon: 'assets/ui/icons/time.png'
+            unit_title: "Time"
+            bg_color: '#cf112d'
+            on_release:
+                root.time_conversion()
+        
+        CardButton:
+            unit_icon: 'assets/ui/icons/volume.png'
+            unit_title: "Volume"
+            bg_color: '#0060a8'
+            on_release:
+                root.volume_conversion()
